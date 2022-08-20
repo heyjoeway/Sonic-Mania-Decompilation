@@ -292,7 +292,9 @@ struct ObjectPlayer {
     int32 autoJumpTimer;
     int32 respawnTimer;
     int32 aiInputSwapTimer;
+#if GAME_VERSION != VER_100 // may not work with building static var files, but who's building 1.00 static var files anyways lol
     bool32 disableP2KeyCheck;
+#endif
     int32 rings;
     STATIC(int32 ringExtraLife, 100);
     int32 powerups;
@@ -536,6 +538,7 @@ void Player_HandleIdleAnimation(void);
 void Player_HandleGroundAnimation(void);
 void Player_HandleGroundMovement(void);
 void Player_HandleGroundRotation(void);
+void Player_HandleAirRotation(void);
 void Player_HandleAirMovement(void);
 void Player_HandleAirFriction(void);
 void Player_Action_Jump(EntityPlayer *entity);

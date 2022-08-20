@@ -1207,7 +1207,7 @@ void InitPublicFunctions()
     ADD_PUBLIC_FUNC(FBZSetup_Scanline_BGInside);
     ADD_PUBLIC_FUNC(FBZSetup_BGSwitch_ShowInside1);
     ADD_PUBLIC_FUNC(FBZSetup_BGSwitch_ShowInside2);
-    ADD_PUBLIC_FUNC(FBZSetup_BGSwitch_ShowInside1_Dup);
+    ADD_PUBLIC_FUNC(FBZSetup_BGSwitch_ShowInside1_NoStorm);
     ADD_PUBLIC_FUNC(FBZSetup_Trigger_ShowExterior);
     ADD_PUBLIC_FUNC(FBZSetup_Trigger_ShowInterior);
     ADD_PUBLIC_FUNC(FBZSetup_StageFinish_EndAct1);
@@ -1919,6 +1919,7 @@ void InitPublicFunctions()
     ADD_PUBLIC_FUNC(Player_UpdatePhysicsState);
     ADD_PUBLIC_FUNC(Player_HandleGroundMovement);
     ADD_PUBLIC_FUNC(Player_HandleGroundRotation);
+    ADD_PUBLIC_FUNC(Player_HandleAirRotation);
     ADD_PUBLIC_FUNC(Player_HandleAirMovement);
     ADD_PUBLIC_FUNC(Player_HandleAirFriction);
     ADD_PUBLIC_FUNC(Player_Action_Jump);
@@ -2511,7 +2512,7 @@ void InitPublicFunctions()
     // Helpers/GameProgress
     ADD_PUBLIC_FUNC(GameProgress_GetNotifStringID);
     ADD_PUBLIC_FUNC(GameProgress_ShuffleBSSID);
-    ADD_PUBLIC_FUNC(GameProgress_GetGameProgress);
+    ADD_PUBLIC_FUNC(GameProgress_GetProgressRAM);
     ADD_PUBLIC_FUNC(GameProgress_GetZoneUnlocked);
     ADD_PUBLIC_FUNC(GameProgress_GetCompletionPercent);
     ADD_PUBLIC_FUNC(GameProgress_TrackGameProgress);

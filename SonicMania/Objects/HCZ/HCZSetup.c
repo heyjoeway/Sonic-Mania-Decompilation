@@ -85,7 +85,7 @@ void HCZSetup_StaticUpdate(void)
             uint16 tile =
                 RSDK.GetTile(Zone->fgLayer[1], player->position.x >> 20, ((hitbox->bottom << 16) + player->position.y - 0x10000) >> 20) & 0x3FF;
 
-            if (((tile >= 226 && tile <= 224) || (tile >= 880 && tile <= 888)) && player->collisionPlane == 1) {
+            if (((tile >= 226 && tile <= 244) || (tile >= 880 && tile <= 888)) && player->collisionPlane == 1) {
                 if (player->state != Player_State_BubbleBounce && player->state != Player_State_MightyHammerDrop) {
                     if (player->onGround) {
                         if (player->state != Player_State_WaterSlide) {
@@ -234,8 +234,7 @@ void HCZSetup_Scanline_WaterLine(ScanlineInfo *scanlines)
     int32 screenY          = 0x210 - (screen->position.y >> 2);
     int32 waterLevel       = FROM_FIXED(Water->waterLevel) - screen->position.y;
 
-    int32 distance       = MAX(1, abs(screenY - waterLevel));
-    int32 scanlineHeight = MAX(0x10000, 0x640000 / distance);
+    int32 scanlineHeight = MAX(0x10000, 0x640000 / MAX(1, abs(screenY - waterLevel)));
 
     screenY    = CLAMP(screenY, 0, screen->size.y);
     waterLevel = CLAMP(waterLevel, 0, screen->size.y);
